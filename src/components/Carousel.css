@@ -1,0 +1,107 @@
+/* src/components/Carousel.css */
+.carousel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.slide img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition: all 0.5s ease;
+}
+
+.slide:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.6);
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+  color: #fff;
+  transform: translateY(100%);
+  transition: all 0.5s ease;
+}
+
+.slide:hover .slide-content {
+  transform: translateY(0);
+}
+
+.slide-content h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.slide-content p {
+  font-size: 1.4rem;
+  opacity: 0.9;
+}
+
+.slick-dots {
+  bottom: -60px;
+}
+
+.custom-dot {
+  width: 14px;
+  height: 14px;
+  background-color: #F47216;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.slick-active .custom-dot {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.slick-prev, .slick-next {
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+}
+
+.slick-prev {
+  left: -70px;
+}
+
+.slick-next {
+  right: -70px;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 60px;
+  color: #F47216;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.slick-prev:hover:before, .slick-next:hover:before {
+  opacity: 1;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #F47216; }
+  50% { box-shadow: 0 0 30px #F47216, 0 0 40px #F47216; }
+  100% { box-shadow: 0 0 10px #F47216; }
+}
+
+.slide {
+  animation: glow 4s infinite;
+}
